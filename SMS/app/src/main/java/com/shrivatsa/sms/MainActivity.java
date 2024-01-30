@@ -3,9 +3,12 @@ package com.shrivatsa.sms;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,12 +25,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // typecasting
-        txtMessage = (EditText) findViewById(R.id.to_send_mssg);
         txtMobileNo = (EditText) findViewById(R.id.to_send_no);
+        txtMessage = (EditText) findViewById(R.id.to_send_mssg);
         sendMessageBtn = (Button) findViewById(R.id.btn_send);
 
     }
+
+    // onClick() method determines the course of action to take when an view is clicked
     public void onClick(View view){
-        
+        try{
+            SmsManager smsManager = SmsManager.getDefault();
+            // the sendTextMessage() method, takes multiple arguments
+            smsManager.sendTextMessage(
+                    txtMobileNo.getText().toString(), null, txtMessage.getText().toString(), null, null
+            );
+        }
+        catch(Exception e){
+            Snackbar.make(view, "Failed to send SMS", Snackbar.LENGTH_LONG).show();
+        }
     }
 }

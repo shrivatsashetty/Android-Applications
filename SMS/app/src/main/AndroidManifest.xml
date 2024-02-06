@@ -2,6 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+<!--    feature tag is required before permission tag -->
+<!--    this tag will be auto added by the IDE itself on hover -->
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+<!--    permission tag to send messages -->
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"

@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
             smsManager.sendTextMessage(
                     txtMobileNo.getText().toString(), null, txtMessage.getText().toString(), null, null
             );
+            // to display success message if sms is sent
+            Snackbar.make(view, "SMS Sent Successfully", Snackbar.LENGTH_LONG).show();
         }
         catch(Exception e){
             Snackbar.make(view, "Failed to send SMS", Snackbar.LENGTH_LONG).show();

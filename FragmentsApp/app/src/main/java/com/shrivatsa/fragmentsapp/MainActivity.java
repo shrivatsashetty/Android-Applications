@@ -22,14 +22,17 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager(); // the method returns a FragmentManager object
         /* create a fragment transaction object to add, remove fragments etc */
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        // initially when the app starts up there are no fragments, therefore we add a fragment at first
         fragmentTransaction.add(R.id.clayout, fragmentOne);
+        // a fragment transaction must always be committed for the changes to be saved
         fragmentTransaction.commit();
 
     }
 
-    /* we have already defined a method to be triggered when the button is clicked in the layout file */
+    /* we have already defined a method to be triggered when the button is clicked in the layout file activity_main.xml */
     public void switchFragment(View view){
         // getSupportFragmentManager() method originally belongs to the superclass AppCompatActivity
+        // hence we are able to call it directly without creating an object
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 

@@ -2,12 +2,9 @@ package com.shrivatsa.runtimewidgets;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
-
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
@@ -38,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked) {
                     imgBtn.setEnabled(true); // to control the states of image button
-                    stateSwitch.setText("Enabed");
+                    stateSwitch.setText("Enabled");
                 }
                 else {
                     imgBtn.setEnabled(false);

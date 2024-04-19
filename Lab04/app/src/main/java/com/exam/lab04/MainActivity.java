@@ -13,9 +13,10 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 public class MainActivity extends AppCompatActivity {
-
+    // create objects for both of the fragments
     FragmentOne fragmentOne = new FragmentOne();
     FragmentTwo fragmentTwo  = new FragmentTwo ();
+    // create a flag variable for keeping track of the current fragment in display
     public int currentFragment = 0;
 
     @Override
@@ -29,15 +30,15 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
+        // create an object of FragmentManager class using the static get method of the parent class
         FragmentManager fragmentManager = getSupportFragmentManager();
-
+        // create a transaction object, this commences the transaction as well
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
+        // setting up initial fragment transaction
         fragmentTransaction.add(R.id.main_clayout, fragmentOne);
-
+        // don't forget to change the flag once the fragment is set
         currentFragment = 1;
-
+        // also don't forget to commit the transaction
         fragmentTransaction.commit();
 
     }
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
 
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
+        // conditionally replace the fragment object, set the flag and commit
         if(currentFragment == 1){
             fragmentTransaction.replace(R.id.main_clayout, fragmentTwo);
             currentFragment = 2;
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
             fragmentTransaction.replace(R.id.main_clayout, fragmentOne);
             currentFragment = 1;
         }
+        // committing the transaction
         fragmentTransaction.commit();
     }
 }

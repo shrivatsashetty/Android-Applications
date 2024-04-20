@@ -1,4 +1,4 @@
-package com.shrivatsa.databaseapp;
+package com.practice.databaseapp;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.shrivatsa.databaseapp", appContext.getPackageName());
+        assertEquals("com.practice.databaseapp", appContext.getPackageName());
     }
 }

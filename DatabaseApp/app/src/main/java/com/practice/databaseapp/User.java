@@ -1,26 +1,25 @@
-package com.shrivatsa.databaseapp;
+package com.practice.databaseapp;
 
 public class User {
-
-    // attributes of an user
+    // set some attributes for the user
     private int id;
     private String name;
     private String password;
 
-    // constructor overloading
+    // parameterized constructor
     public User(String name, String password) {
         this.name = name;
         this.password = password;
     }
 
-    // constructor with 3 args
-    public User(int id, String name, String password){
+    // constructor overloading
+    public User(int id, String name, String password) {
         this.id = id;
         this.name = name;
         this.password = password;
     }
 
-    // creating getters and setters
+    /* setter and getter methods */
     public int getId() {
         return id;
     }
@@ -28,12 +27,11 @@ public class User {
     public void setId(int id) {
         this.id = id;
     }
-
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public void setName(String name){
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -44,4 +42,5 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

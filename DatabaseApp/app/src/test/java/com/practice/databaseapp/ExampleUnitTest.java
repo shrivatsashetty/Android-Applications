@@ -1,4 +1,4 @@
-package com.shrivatsa.databaseapp;
+package com.practice.databaseapp;
 
 import org.junit.Test;
 

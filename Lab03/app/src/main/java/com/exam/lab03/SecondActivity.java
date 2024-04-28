@@ -26,7 +26,7 @@ public class SecondActivity extends AppCompatActivity {
         });
         //  create a textview element to display the message passed as extra
         textDisplay = (TextView) findViewById(R.id.text_display);
-        // extract the extra received along the intent
+        // get the intent object that started the activityd
         Intent recievedIntent = getIntent();
         // display the extra in the textview
         textDisplay.setText(recievedIntent.getStringExtra("message"));
